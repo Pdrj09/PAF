@@ -1,53 +1,29 @@
-#import the tts and stt modules
-import models.stt_model as stts
+#import the tts and stt modules, import additional modules for the agent
+import logging
+from traceback import print_tb
+
+from pandas import array
+from torch import float16
+from models.stt_model import model as stt
 import models.tts_model as tts
 import numpy as np
-from pydub import AudioSegment
+import wave
 
-song = AudioSegment.from_wav("paf_core/tts_output.wav")
+print('cargando el asistente')
+logger = logging
+logger.warning('iniciando el programa')
 
 def stt_models():
-    audio_buffer = "paf_core/tts_output.wav"
-    audio_buffer_0 = np.int16(audio_buffer)
-    print(audio_buffer_0)
-    sttm = stts.model('STT/model.tflite')
-    sttm.enableExternalScorer('STT/kenlm_es.scorer')
-    p = sttm.stt(song)
+    audio_buffer = wave.open("paf_core/rec/recording1.wav", "r")
+    audio_buffer = wave.rewind(audio_buffer)
+    logger.critical(audio_buffer)
+    #audio = np.int16(audio_buffer)
+    logger.warning('cargando el asistente')
+    sttm = stt('stt/model.tflite')
+    #sttm.enableExternalScorer('stt/kenlm_es.scorer')
+    logger.warning('procesando audio')
+    p = sttm.stt()
     print(p)
 
+
 stt_models()
-
-
-
-
-
-'''import pyaudio
-
-class AudioRecorder():
-
-    N = 4096 #chunk
-    format = pyaudio.paInt16
-    channels = 1
-    rate = 44100
-    T = 1/rate
-    
-    def __init__(self):
-        self.p = pyaudio.PyAudio()
-
-  
-    def callbackFunc(self, in_data, frame_count, time_info, status_flags):
-        print("Callback...")
-        self.sock.sendall(in_data)
-        return (in_data, pyaudio.paContinue)
-    
-    
-    def openStream(self):
-        self.stream = self.p.open(format=self.format,
-                channels= self.channels,
-                rate= self.rate,
-                input=True,
-                frames_per_buffer= self.N,
-                stream_callback = self.callbackFunc)
-
-p = AudioRecorder()
-p.openStream()'''

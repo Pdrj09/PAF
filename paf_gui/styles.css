@@ -1,0 +1,25 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+body {
+    background-color: #000000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+#n {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 100px;
+}
+#o{
+    font-size: 3em;
+    text-align: center;
+}
+h1 {
+    font-size: 4.5em;
+    text-align: center;
+}

@@ -8,6 +8,9 @@ STT/*.tflite
 audio/*.wav
 audgio/*.txt
 stt/
+rec/
+tts_test.py
+.vscode/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
