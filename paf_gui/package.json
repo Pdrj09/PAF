@@ -4,7 +4,7 @@
   "description": "Personal Assistant, Free",
   "keywords": [],
   "main": "./main.js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "pdrj",
   "scripts": {
     "start": "electron-forge start",

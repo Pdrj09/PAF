@@ -11,6 +11,7 @@ stt/
 rec/
 tts_test.py
 .vscode/
+.idea/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

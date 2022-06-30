@@ -25,7 +25,6 @@ class tem_actual():
         out = requests.get(url)
         data = out.json()
         self.data = data
-
         del out
         del data
         del url
