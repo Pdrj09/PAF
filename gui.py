@@ -50,7 +50,7 @@ class Paf(customtkinter.CTk):
         self.temp_box.destroy()
         self.temp_box = customtkinter.CTkTextbox(master=self, width=400, corner_radius=0)
         self.temp_box.grid(row=0, column=0, sticky='nsew', )
-        self.temp_box.insert('0.0', f'{data_dict["temp"]} ºC')
+        self.temp_box.insert('0.0', f'La temperatura actual es de: {data_dict["temp"]}ºC')
 
         self.humi_box.destroy()
         self.humi_box = customtkinter.CTkTextbox(master=self, width=400, corner_radius=0)
@@ -64,7 +64,7 @@ class Paf(customtkinter.CTk):
 
         self.des_box.destroy()
         self.des_box = customtkinter.CTkTextbox(master=self, width=400, corner_radius=0)
-        self.des_box.grid(row=3, column=0, sticky='nsew', )
+        self.des_box.grid(row=3, column=0, sticky='nsew',)
         self.des_box.insert('0.0', data_dict['des'])
 
         print('button pressed')
