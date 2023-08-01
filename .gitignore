@@ -2,6 +2,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/virtualenv,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=virtualenv,pythons
 ### other ###
+./.gitignore
 paf_core/settings.json
 STT/*.pbmm
 STT/*.tflite
@@ -12,6 +13,11 @@ rec/
 tts_test.py
 .vscode/
 .idea/
+forecast/
+out/
+paf_core/settings.py
+forecast.json
+.pre-commit-config.yaml
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -25,8 +31,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
-#STT/
-DeepSpeech/
 develop-eggs/
 dist/
 downloads/
