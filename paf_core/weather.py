@@ -1,6 +1,6 @@
 """
-    PAF - Personal Assistant, Free
-    weather.py - Weather module of PAF_core
+    PAF Core
+    Weather module
 """
 import logging
 import requests
@@ -33,6 +33,8 @@ class TemActual:
 &lang={LAN}&units={UNITS}'
 
         try:
+
+            #try to connect to the server and get the weather data
             out = requests.get(url, timeout=100)
             data = out.json()
             logger.info('request status -> OK')
@@ -46,9 +48,7 @@ class TemActual:
             logger.critical('TIME OUT ERROR -> fail request')
 
         self.data = data
-        del out
-        del data
-        del url
+        del out, data, url
         return status
 
     def resf(self, data: dict):
